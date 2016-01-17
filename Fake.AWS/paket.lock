@@ -1,0 +1,9 @@
+FRAMEWORK: >= NET46
+NUGET
+  remote: https://www.nuget.org/api/v2
+  specs:
+    AWSSDK.Core (3.2.2-beta)
+    AWSSDK.OpsWorks (3.2.2-beta)
+      AWSSDK.Core (>= 3.2.2-beta < 3.3.0-beta)
+    AWSSDK.S3 (3.2.2-beta)
+      AWSSDK.Core (>= 3.2.2-beta < 3.3.0-beta)
