@@ -7,3 +7,4 @@ NUGET
       AWSSDK.Core (>= 3.2.2-beta < 3.3.0-beta)
     AWSSDK.S3 (3.2.2-beta)
       AWSSDK.Core (>= 3.2.2-beta < 3.3.0-beta)
+    FAKE (4.14.7)

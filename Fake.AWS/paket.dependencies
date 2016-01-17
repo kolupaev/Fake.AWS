@@ -4,3 +4,4 @@ framework >= net46
 nuget AWSSDK.Core 3.2.2.0-beta
 nuget AWSSDK.OpsWorks 3.2.2.0-beta
 nuget AWSSDK.S3 3.2.2.0-beta
+nuget FAKE

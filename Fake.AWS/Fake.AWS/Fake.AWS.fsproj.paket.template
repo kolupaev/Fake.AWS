@@ -1,0 +1,8 @@
+type project
+id Fake.AWS
+version 0.1
+authors Valera Kolupaev
+description
+    AWS Bindings for Fake build
+excludeddependencies
+	FAKE
