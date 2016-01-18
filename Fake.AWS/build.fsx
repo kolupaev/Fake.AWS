@@ -1,7 +1,7 @@
 #r "packages/FAKE/tools/FakeLib.dll" // include Fake lib
 open Fake 
 
-let nugetDir = "./nuget"
+let nugetDir = "./temp"
 let buildDir = "./build"
 
 Target "Clean" (fun _ -> CleanDirs [buildDir; nugetDir; ])

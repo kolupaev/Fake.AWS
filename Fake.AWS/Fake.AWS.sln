@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{C5E1C3
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fake.AWS", "Fake.AWS\Fake.AWS.fsproj", "{DC22AC8A-B8DA-4D2F-956F-D6BC2B367912}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{085EC124-173F-47C5-A133-AC2DC8ED7008}"
+	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
+		build.fsx = build.fsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
