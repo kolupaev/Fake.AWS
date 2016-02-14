@@ -24,3 +24,7 @@ module public ``FAKE Integration Test`` =
         member x.``When executed will print OpsWorks stacks`` () =
             let output = ExecuteAndGetOutput "..\\packages\\FAKE\\tools\\FAKE.exe" "../example_build.fsx DescribeStacks"
             Assert.Matches("Stack: \w+", output)
+        [<Fact>]
+        member x.``When executed will print S3 buckets``() =
+            let output = ExecuteAndGetOutput "..\\packages\\FAKE\\tools\\FAKE.exe" "../example_build.fsx PrintS3Buckets"
+            Assert.Matches("Bucket: \w+", output)

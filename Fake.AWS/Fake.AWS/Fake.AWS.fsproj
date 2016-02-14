@@ -53,6 +53,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Configuration.fs" />
     <Compile Include="Clients.fs" />
+    <Compile Include="S3.fs" />
     <Compile Include="OpsWorks.fs" />
     <Compile Include="Profiles.fs" />
   </ItemGroup>

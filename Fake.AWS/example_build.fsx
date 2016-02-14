@@ -18,4 +18,18 @@ Target "DescribeStacks" (fun _ ->
     Fake.AWS.OpsWorks.describeStacks()
 )
 
+Target "PrintS3Buckets" (fun _ -> 
+    Fake.AWS.S3.printBuckets()
+)
+
+Target "CanCompileTheRest" (fun _ -> 
+    Fake.AWS.S3.upload "src" "dst" "dst" |> ignore
+    
+    Fake.AWS.OpsWorks.updateCookbooks "stack" "app" |> ignore
+    Fake.AWS.OpsWorks.updateCookbooksAsync "stack" "app" |> ignore
+    
+    Fake.AWS.OpsWorks.deploy "stack" "app" |> ignore
+    Fake.AWS.OpsWorks.deployAsync "stack" "app" |> ignore
+)
+
 RunTargetOrDefault "Default"
