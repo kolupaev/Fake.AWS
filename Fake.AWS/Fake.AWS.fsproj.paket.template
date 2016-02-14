@@ -5,4 +5,4 @@ authors Valera Kolupaev
 description
     AWS Bindings for FAKE build system
 files
-	build/merged/FAKE.AWS.dll ==> lib
+	build/merged/Fake.AWS.dll ==> lib

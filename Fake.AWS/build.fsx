@@ -13,9 +13,9 @@ Target "BuildSolution" (fun _ ->
 
 Target "Merge" (fun _ ->
     let mergeOutDir = buildDir @@ "merged"
-    FileHelper.CreateDir mergeOutDir 
+    FileHelper.CreateDir mergeOutDir
     ILMergeHelper.ILMerge
-      (fun p -> { p with Libraries = (!!(buildDir @@ "AWSSDK.*.dll")); Internalize = InternalizeTypes.Internalize }) 
+      (fun p -> { p with Libraries = (!!(buildDir @@ "AWSSDK.*.dll")); Internalize = InternalizeTypes.Internalize })
       (mergeOutDir @@ "Fake.AWS.dll")
       (buildDir @@ "Fake.AWS.dll")
 )
@@ -24,18 +24,18 @@ Target "Test" (fun _ ->
     let test = (buildDir @@ "test")
     FileHelper.CreateDir test
     !! (buildDir @@ @"*.fsx")
-      ++ (buildDir @@ "merged" @@ "Fake.AWS.dll") 
+      ++ (buildDir @@ "merged" @@ "Fake.AWS.dll")
       |> FileHelper.CopyFiles test
     !! (buildDir + @"\*.Tests.dll")
       |> xUnit (fun s -> {s with ToolPath = @"packages\xunit.runner.console\tools\xunit.console.exe"})
 )
 
-Target "Package" (fun _ -> 
+Target "Package" (fun _ ->
     Paket.Pack id
 )
 
 Target "PublishNuget" (fun _ ->
-    () //Paket.Push id
+    Paket.Push id
 )
 
 "Clean"
