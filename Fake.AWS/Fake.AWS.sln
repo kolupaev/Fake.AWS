@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{C5E1C317-8C53-45F2-98F7-57A63D131AEF}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{085EC124
 	ProjectSection(SolutionItems) = preProject
 		build.bat = build.bat
 		build.fsx = build.fsx
+		example_build.bat = example_build.bat
+		example_build.fsx = example_build.fsx
+		Fake.AWS\Fake.AWS.fsproj.paket.template = Fake.AWS\Fake.AWS.fsproj.paket.template
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fake.AWS.Tests", "Fake.AWS.Tests\Fake.AWS.Tests.fsproj", "{21BDE67D-58CD-487E-A87E-249C7E821789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +31,10 @@ Global
 		{DC22AC8A-B8DA-4D2F-956F-D6BC2B367912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC22AC8A-B8DA-4D2F-956F-D6BC2B367912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC22AC8A-B8DA-4D2F-956F-D6BC2B367912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BDE67D-58CD-487E-A87E-249C7E821789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BDE67D-58CD-487E-A87E-249C7E821789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BDE67D-58CD-487E-A87E-249C7E821789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BDE67D-58CD-487E-A87E-249C7E821789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

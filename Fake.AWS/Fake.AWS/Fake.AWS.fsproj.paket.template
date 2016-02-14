@@ -1,8 +1,8 @@
-type project
+type file
 id Fake.AWS
-version 0.1.1
+version 0.1.2
 authors Valera Kolupaev
 description
-    AWS Bindings for Fake build
-excludeddependencies
-	FAKE
+    AWS Bindings for FAKE build system
+files
+	build/merged/FAKE.AWS.dll ==> lib
