@@ -1,3 +1,5 @@
 AWSSDK.Core
 AWSSDK.OpsWorks
 AWSSDK.S3
+AWSSDK.CloudWatch
+AWSSDK.CodeDeploy

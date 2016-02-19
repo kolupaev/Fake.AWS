@@ -7,6 +7,7 @@
 open Fake
 open Fake.AWS.OpsWorks
 open Fake.AWS.Profiles
+open Fake.AWS.CloudWatch
 
 Fake.AWS.Configuration.setProfileAndEndpoint "FakeTest" "us-east-1"
 
@@ -33,3 +34,7 @@ Target "CanCompileTheRest" (fun _ ->
 )
 
 RunTargetOrDefault "Default"
+
+let asx = Fake.AWS.CloudWatch.alarmspec {
+    alarm "foo"
+}

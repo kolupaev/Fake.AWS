@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{085EC124
 		build.fsx = build.fsx
 		example_build.bat = example_build.bat
 		example_build.fsx = example_build.fsx
-		Fake.AWS\Fake.AWS.fsproj.paket.template = Fake.AWS\Fake.AWS.fsproj.paket.template
+		Fake.AWS.fsproj.paket.template = Fake.AWS.fsproj.paket.template
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject

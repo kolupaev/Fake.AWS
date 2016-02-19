@@ -15,7 +15,7 @@ Target "Merge" (fun _ ->
     let mergeOutDir = buildDir @@ "merged"
     FileHelper.CreateDir mergeOutDir
     ILMergeHelper.ILMerge
-      (fun p -> { p with Libraries = (!!(buildDir @@ "AWSSDK.*.dll")); Internalize = InternalizeTypes.Internalize })
+      (fun p -> { p with Libraries = (!!(buildDir @@ "AWSSDK.*.dll")); Internalize = InternalizeTypes.NoInternalize;  })
       (mergeOutDir @@ "Fake.AWS.dll")
       (buildDir @@ "Fake.AWS.dll")
 )

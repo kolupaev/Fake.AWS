@@ -2,27 +2,9 @@
 open Amazon.OpsWorks
 open Clients
 
-type WaitResult =
-        | InProgress of status : string
-        | Failed of status : string
-        | Completed of status : string
 
 module internal Implementation = 
-    let rec private wait operationName callback =
-        async {
-                do! Async.Sleep 1000
-                let result = callback()
-                match result with
-                | InProgress(status) ->
-                    printf "Operation %s is in progress: %s" operationName status
-                    return! wait operationName callback
-                | Failed(status) ->
-                    printf "Operation %s failed: %s" operationName status
-                    return result
-                | Completed(status) ->
-                    printf "Operation %s completed: %s" operationName status
-                    return result
-            }
+    
     let private deploymentStatus (client : Amazon.OpsWorks.AmazonOpsWorksClient) deploymentId =
         let response = client.DescribeDeployments(Model.DescribeDeploymentsRequest(DeploymentIds = ResizeArray<string>([deploymentId])))
         if response.Deployments.Count = 0 then
@@ -39,7 +21,8 @@ module internal Implementation =
         let client = opsworks()
         let request = Model.CreateDeploymentRequest(AppId = app, StackId = stack, Command = command)
         let response = client.CreateDeployment(request)
-        wait command.Name.Value (fun () -> deploymentStatus client response.DeploymentId)
+        response |> assertSuccess "Failed to create a deployment"
+        spinWait command.Name.Value (fun () -> deploymentStatus client response.DeploymentId)
     
     let internal runDeployCommandSync command stack app =
         Async.RunSynchronously (runDeployCommandAsync command stack app)
