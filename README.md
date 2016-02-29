@@ -16,7 +16,7 @@ Modify `build.bat` file to download latest Fake.AWS version
 Modify `build.fsx` to reference `Fake.AWS.dll` and configure your profile name and endpoint
 
     #r "Fake.AWS.dll"
-    Fake.AWS.Configuration.setProfileAndEndpoint "FakeTest" "us-east-1"
+    Fake.AWS.Configuration.setProfileAndEndpoint "FakeTest" "us-east-1" // FakeTest should be a registered visual studio aws profile
 
 ## Implemented bindings
 
@@ -29,3 +29,8 @@ Modify `build.fsx` to reference `Fake.AWS.dll` and configure your profile name a
 
     Fake.AWS.OpsWorks.deploy "stackId" "appId"
     Fake.AWS.OpsWorks.deployAsync "stackId" "appId"
+
+### CodeDeply
+	Fake.AWS.CodeDeploy.push "AppName" "path\to\app" "targetBucket" "targetKey"
+	Fake.AWS.CodeDeploy.deployAsync "AppName" metadata "deploymentGroup" "deploymentConfig"
+	Fake.AWS.CodeDeploy.deploy "AppName" metadata "deploymentGroup" "deploymentConfig"

@@ -6,3 +6,5 @@ description
     AWS Bindings for FAKE build system
 files
 	build/merged/Fake.AWS.dll ==> lib
+projectUrl
+	https://github.com/kolupaev/Fake.AWS
